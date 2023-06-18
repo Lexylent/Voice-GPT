@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voice-GPT</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=YourChosenFont&display=swap">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/templates/styles.css">
+  <script src="/templates/scripts.js"></script>
+ 
+
+</head>
+
+<body>
+  
+  <video autoplay loop muted id="backgroundVideo" playbackRate="0.5">
+    <source src="/static/pexels2.mp4" type="video/mp4">
+  </video>
+  
+
+
+  <div class="container">
+    <h1>Voice-GPT</h1>
+    <button id="recordButton">Aufnahme starten</button>
+    <div id="result"></div>
+    <form id="correctionForm" style="display: none;">
+      <input type="text" id="correctionText" placeholder="Korrektur eingeben">
+      <button type="submit" id="submitButton">Absenden</button>
+    </form>
+  </div>
+
+
+  
+</body>
+
+</html>
