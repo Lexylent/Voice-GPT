@@ -1,6 +1,6 @@
 import openai
 
-openai.api_key ='Hier_kommt_der-apikey_hinein ' #CHATGPT KEY
+openai.api_key ='Hier_kommt_der-apikey_hinein' #CHATGPT KEY
 
 # Versuche, eine Anfrage an OpenAI zu stellen
 def generate_answer(question):
