@@ -1,7 +1,7 @@
-Voice-GPT
-Voice-GPT ist ein Projekt, das die OpenAI GPT-3-Technologie verwendet, um Sprachaufnahmen zu transkribieren und Fragen basierend auf dem transkribierten Text zu beantworten.
+###Voice-GPT
+##Voice-GPT ist ein Projekt, das die OpenAI GPT-3-Technologie verwendet, um Sprachaufnahmen zu transkribieren und Fragen basierend auf dem transkribierten Text zu beantworten.
 
-Funktionen:
+##Funktionen:
 
 Aufnahme von Sprachaudios: Die Anwendung ermöglicht es Benutzern, Sprachaufnahmen zu machen.
 Transkription von Audios: Die aufgenommenen Sprachaudios werden automatisch transkribiert und der Text wird extrahiert.
@@ -9,7 +9,7 @@ Frage-Antwort-Service: Basierend auf dem transkribierten Text kann der Benutzer 
 Datenbankintegration: Die Anwendung speichert die aufgenommenen Audios und die dazugehörigen transkribierten Texte in einer SQLite-Datenbank.
 Garbage Collector: Die Anwendung enthält einen Garbage Collector, der regelmäßig ältere Audiodateien und Textdateien aus dem Speicher löscht.
 
-Anleitung zur Verwendung:
+##Anleitung zur Verwendung:
 
 Klonen Sie das Repository auf Ihren lokalen Computer.
 Stellen Sie sicher, dass Python und die erforderlichen Abhängigkeiten installiert sind. Verwenden Sie dazu den Befehl pip install -r requirements.txt.
@@ -19,7 +19,7 @@ Nehmen Sie eine Sprachaufnahme auf, indem Sie auf den entsprechenden Button klic
 Die Anwendung transkribiert automatisch das aufgenommene Audio und zeigt den transkribierten Text an.
 Geben Sie eine Frage in das Textfeld ein und klicken Sie auf "Frage stellen". Die Anwendung generiert eine Antwort basierend auf dem transkribierten Text und zeigt sie an.
 
-Anforderungen:
+##Anforderungen:
 
 Python 3.x
 Flask
@@ -28,7 +28,7 @@ SpeechRecognition
 OpenAI Python
 Stellen Sie sicher, dass Sie die erforderlichen API-Schlüssel für die OpenAI GPT-3-Technologie haben und fügen Sie sie in der Datei api_service.py ein, um die Frage-Antwort-Funktion nutzen zu können.
 
-Autor
+##Autor
 [Christian Schröder & Alexander Ibach]
 
 Lizenz
