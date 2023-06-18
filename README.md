@@ -3,11 +3,11 @@
 
 ## Funktionen:
 
-Aufnahme von Sprachaudios: Die Anwendung ermöglicht es Benutzern, Sprachaufnahmen zu machen.
-Transkription von Audios: Die aufgenommenen Sprachaudios werden automatisch transkribiert und der Text wird extrahiert.
-Frage-Antwort-Service: Basierend auf dem transkribierten Text kann der Benutzer Fragen stellen und die Anwendung generiert eine Antwort mithilfe der OpenAI GPT-3-Technologie.
-Datenbankintegration: Die Anwendung speichert die aufgenommenen Audios und die dazugehörigen transkribierten Texte in einer SQLite-Datenbank.
-Garbage Collector: Die Anwendung enthält einen Garbage Collector, der regelmäßig ältere Audiodateien und Textdateien aus dem Speicher löscht.
+1. Aufnahme von Sprachaudios: Die Anwendung ermöglicht es Benutzern, Sprachaufnahmen zu machen.
+2. Transkription von Audios: Die aufgenommenen Sprachaudios werden automatisch transkribiert und der Text wird extrahiert.
+3. Frage-Antwort-Service: Basierend auf dem transkribierten Text kann der Benutzer Fragen stellen und die Anwendung generiert eine Antwort mithilfe der OpenAI GPT-3-Technologie.
+4. Datenbankintegration: Die Anwendung speichert die aufgenommenen Audios und die dazugehörigen transkribierten Texte in einer SQLite-Datenbank.
+5. Garbage Collector: Die Anwendung enthält einen Garbage Collector, der regelmäßig ältere Audiodateien und Textdateien aus dem Speicher löscht.
 
 ## Anleitung zur Verwendung:
 
@@ -18,8 +18,7 @@ Garbage Collector: Die Anwendung enthält einen Garbage Collector, der regelmä�
 5. Nehmen Sie eine Sprachaufnahme auf, indem Sie auf den entsprechenden Button klicken.
 6. Die Anwendung transkribiert automatisch das aufgenommene Audio und zeigt den transkribierten Text an.
 7. Geben Sie eine Frage in das Textfeld ein und klicken Sie auf "Frage stellen". Die Anwendung generiert eine Antwort basierend auf dem transkribierten Text und zeigt sie an.
-
-Hinweis: Der Text, der aus dem Audio in Text umgewandelt wird, steht bereits zum Absenden bereit in der unteren Zeile, in der Sie den Text eventuell noch vor dem Absenden korrigieren können, wenn nötig.
+### Hinweis: Der Text, der aus dem Audio in Text umgewandelt wird, steht bereits zum Absenden bereit in der unteren Zeile, in der Sie den Text eventuell noch vor dem Absenden korrigieren können, wenn nötig.
 
 
 ## Unit Tests
@@ -51,18 +50,13 @@ python -m unittest utittest_app.py
 
 ## Anforderungen:
 
-Python 3.x
-Flask
-PyAudio
-SpeechRecognition
-OpenAI Python
-Stellen Sie sicher, dass Sie die erforderlichen API-Schlüssel für die OpenAI GPT-3-Technologie haben und fügen Sie sie in der Datei api_service.py ein, um die Frage-Antwort-Funktion nutzen zu können.
-
-## Autor
-[Christian Schröder & Alexander Ibach]
-
-Lizenz
-Dieses Projekt ist unter der MIT-Lizenz lizenziert.
+1. Python 3.x
+2. Flask
+3. PyAudio
+4. SpeechRecognition
+5. OpenAI Python
+   
+### Stellen Sie sicher, dass Sie die erforderlichen API-Schlüssel für die OpenAI GPT-3-Technologie haben und fügen Sie sie in der Datei api_service.py ein, um die Frage-Antwort-Funktion nutzen zu können.
 
 ## Bilder
 
@@ -83,6 +77,12 @@ Bitte beachten Sie, dass die Ordnerstruktur und die Dateinamen beibehalten werde
 
 ## Hinweise
 Dieses Projekt wurde im Rahmen eines Abschlussprojekts erstellt. Bitte beachten Sie, dass die OpenAI GPT-3-Technologie kostenpflichtig ist und die Nutzung der API-Schlüssel zu Kosten führen kann.
+
+## Autor
+[Christian Schröder & Alexander Ibach]
+
+Lizenz
+Dieses Projekt ist unter der MIT-Lizenz lizenziert.
 
 Wenn Sie Fragen oder Probleme mit dem Projekt haben, kontaktieren Sie mich bitte unter [ibachalex13@gmail.com].
 
