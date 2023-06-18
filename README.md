@@ -34,6 +34,23 @@ Autor
 Lizenz
 Dieses Projekt ist unter der MIT-Lizenz lizenziert.
 
+## Bilder
+
+In diesem Projekt werden Bilder verwendet, um das visuelle Design zu unterstützen. Aufgrund der Dateigrößenbeschränkung des Repositories können die Bilder nicht direkt hier abgelegt werden. Sie müssen die Bilder manuell herunterladen und in den entsprechenden Ordnern platzieren, um das Projekt korrekt auszuführen.
+
+### Platzierung der Bilder
+
+Folgende Bilder werden verwendet:
+
+- Hintergrundvideo: Das Hintergrundvideo wird im HTML-Code referenziert. Um das Video anzuzeigen, platzieren Sie es im Ordner "static" und aktualisieren Sie den Dateipfad im HTML-Code.
+
+### Aktualisierung des HTML-Codes
+
+In der HTML-Datei (`index.html`) finden Sie die entsprechenden Stellen, an denen die Bilder referenziert werden. Passen Sie die Dateipfade entsprechend an, um sicherzustellen, dass die Bilder korrekt angezeigt werden.
+
+Bitte beachten Sie, dass die Ordnerstruktur und die Dateinamen beibehalten werden sollten, um die Konsistenz des Projekts zu gewährleisten.
+
+
 Hinweise
 Dieses Projekt wurde im Rahmen eines Abschlussprojekts erstellt. Bitte beachten Sie, dass die OpenAI GPT-3-Technologie kostenpflichtig ist und die Nutzung der API-Schlüssel zu Kosten führen kann.
 
