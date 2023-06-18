@@ -78,7 +78,7 @@ In der HTML-Datei (`index.html`) finden Sie die entsprechenden Stellen, an denen
 Bitte beachten Sie, dass die Ordnerstruktur und die Dateinamen beibehalten werden sollten, um die Konsistenz des Projekts zu gewährleisten.
 
 
-Hinweise
+## Hinweise
 Dieses Projekt wurde im Rahmen eines Abschlussprojekts erstellt. Bitte beachten Sie, dass die OpenAI GPT-3-Technologie kostenpflichtig ist und die Nutzung der API-Schlüssel zu Kosten führen kann.
 
 Wenn Sie Fragen oder Probleme mit dem Projekt haben, kontaktieren Sie mich bitte unter [ibachalex13@gmail.com].
