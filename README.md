@@ -1,4 +1,4 @@
-### Voice-GPT
+# Voice-GPT
 ## Voice-GPT ist ein Projekt, das die OpenAI GPT-3-Technologie verwendet, um Sprachaufnahmen zu transkribieren und Fragen basierend auf dem transkribierten Text zu beantworten.
 
 ## Funktionen:
