@@ -11,13 +11,16 @@ Garbage Collector: Die Anwendung enthält einen Garbage Collector, der regelmä�
 
 ## Anleitung zur Verwendung:
 
-Klonen Sie das Repository auf Ihren lokalen Computer.
-Stellen Sie sicher, dass Python und die erforderlichen Abhängigkeiten installiert sind. Verwenden Sie dazu den Befehl pip install -r requirements.txt.
-Starten Sie die Anwendung, indem Sie den Befehl python main.py ausführen.
-Öffnen Sie einen Webbrowser und navigieren Sie zur URL http://127.0.0.1:5000.
-Nehmen Sie eine Sprachaufnahme auf, indem Sie auf den entsprechenden Button klicken.
-Die Anwendung transkribiert automatisch das aufgenommene Audio und zeigt den transkribierten Text an.
-Geben Sie eine Frage in das Textfeld ein und klicken Sie auf "Frage stellen". Die Anwendung generiert eine Antwort basierend auf dem transkribierten Text und zeigt sie an.
+1. Klonen Sie das Repository auf Ihren lokalen Computer.
+2. Stellen Sie sicher, dass Python und die erforderlichen Abhängigkeiten installiert sind. Verwenden Sie dazu den Befehl `pip install -r requirements.txt`.
+3. Starten Sie die Anwendung, indem Sie den Befehl `python main.py` ausführen.
+4. Öffnen Sie einen Webbrowser und navigieren Sie zur URL `http://127.0.0.1:5000`.
+5. Nehmen Sie eine Sprachaufnahme auf, indem Sie auf den entsprechenden Button klicken.
+6. Die Anwendung transkribiert automatisch das aufgenommene Audio und zeigt den transkribierten Text an.
+7. Geben Sie eine Frage in das Textfeld ein und klicken Sie auf "Frage stellen". Die Anwendung generiert eine Antwort basierend auf dem transkribierten Text und zeigt sie an.
+
+Hinweis: Der Text, der aus dem Audio in Text umgewandelt wird, steht bereits zum Absenden bereit in der unteren Zeile, in der Sie den Text eventuell noch vor dem Absenden korrigieren können, wenn nötig.
+
 
 ## Unit Tests
 
