@@ -1,0 +1,231 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voice-GPT</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=YourChosenFont&display=swap">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/templates/styles.css">
+  <script src="/templates/scripts.js"></script>
+ 
+
+</head>
+
+<body>
+  
+  <video autoplay loop muted id="backgroundVideo" playbackRate="0.5">
+    <source src="/static/pexels2.mp4" type="video/mp4">
+  </video>
+  
+
+
+  <div class="container">
+    <h1>Voice-GPT</h1>
+    <button id="recordButton">Aufnahme starten</button>
+    <div id="result"></div>
+    <form id="correctionForm" style="display: none;">
+      <input type="text" id="correctionText" placeholder="Korrektur eingeben">
+      <button type="submit" id="submitButton">Absenden</button>
+    </form>
+  </div>
+
+
+  
+</body>
+
+</html>
+
+document.addEventListener('DOMContentLoaded', function() {
+  var recordButton = document.getElementById('recordButton');
+  var resultDiv = document.getElementById('result');
+  var correctionForm = document.getElementById('correctionForm');
+  var correctionText = document.getElementById('correctionText');
+  var submitButton = document.getElementById('submitButton');
+
+  recordButton.addEventListener('click', function() {
+    recordButton.disabled = true;
+    resultDiv.innerHTML = 'Aufnahme läuft für 10s...';
+    correctionText.value = '';
+    // Code für die Aufnahme und die Spracherkennung
+    fetch('/transcribe', { method: 'POST' })
+      .then(response => response.json())
+      .then(data => {
+        resultDiv.innerHTML = 'Textausgabe: ' + data.text;
+        correctionForm.style.display = 'block';
+        correctionText.value = data.text; // Den erkannten Text im Korrekturtextfeld anzeigen
+        recordButton.disabled = false; // Aufnahmeschaltfläche wieder aktivieren
+        
+      })
+      .catch(error => {
+        console.error('Fehler:', error);
+        recordButton.disabled = false; // Aufnahmeschaltfläche wieder aktivieren
+      });
+  });
+
+  correctionForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    var correction = correctionText.value;
+
+    // Anzeige des korrigierten Texts im selben Feld
+    resultDiv.innerHTML = 'Textausgabe: <span class="text-to-correct">' + correction + '</span>';
+
+    // Senden des korrigierten Texts an den Server
+    fetch('/correct', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ correction: correction })
+    })
+      .then(response => response.json())
+      .then(data => {
+        // Anzeigen der Antwort des Servers
+        resultDiv.innerHTML += '<br><br>Antwort: ' + data.response;
+      })
+      .catch(error => {
+        console.error('Fehler:', error);
+      });
+  });
+});
+body {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden; /* Damit das Video den gesamten Hintergrund abdeckt */
+}
+
+#backgroundVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Das Video im Hintergrund positionieren */
+  filter: brightness(1.5) contrast(1.2) saturate(1.5);
+  animation: neon-glow 2s ease-in-out infinite alternate;
+}
+
+
+@keyframes neon-glow {
+  0%, 100% {
+    filter: brightness(1.5) contrast(1.2) saturate(1.5);
+  }
+  50% {
+    filter: brightness(2) contrast(1.5) saturate(2);
+  }
+}
+
+
+
+.container {
+  text-align: center;
+  max-width: 1000px;
+  width: 250%;
+  margin-top: 50px;
+}
+
+h1 {
+  font-size: 90px;
+  margin-top: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'YourChosenFont', sans-serif;
+  position: relative;
+  color: #4f60ff;
+  animation: text-glow 2s ease-in-out infinite alternate;
+  text-shadow: 0 0 10px black, 0 0 20px blue, 0 0 30px blue, 0 0 40px blue, 0 0 50px blue, 0 0 60px blue, 0 0 70px blue; /* Geändert: Textschatten in blauweiß */
+}
+
+@keyframes text-glow {
+  from {
+    text-shadow: 0 0 10px white;
+  }
+  to {
+    text-shadow: 0 0 10px white, 0 0 20px #33f5ff, 0 0 30px #33f5ff, 0 0 40px #33f5ff, 0 0 50px #33f5ff, 0 0 60px #33f5ff, 0 0 70px #33f5ff;
+  }
+}
+
+#recordButton {
+  background-color: white;
+  color: #b51818;
+  border: none;
+  padding: 16px 32px;
+  font-size: 28px;
+  border-radius: 0;
+  cursor: pointer;
+  box-shadow: 0 0 10px 10px #33f5ff; /* Geändert: Schattenfarbe auf Türkis */
+}
+
+#result {
+  margin-top: 40px;
+  font-size: 24px;
+  border: 1px solid #33f5ff;
+  color: white;
+  font-weight: bold;
+  padding: 20px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 20px auto;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#correctionText {
+  padding: 20px;
+  font-size: 24px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 20px auto;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #33f5ff;
+  color:white ;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+}
+
+.text-to-correct {
+  font-weight: bold;
+  color:white ;
+  font-size: 30px;
+  display: block;
+  margin-top: 20px;
+}
+
+.outlined-text {
+  border: 2px solid red;
+  padding: 18px;
+  margin-top: 40px;
+}
+
+#submitButton {
+  background-color: white;
+  color: #b51818;
+  padding: 16px 32px;
+  font-size: 28px;
+  border-radius: 0;
+  cursor: pointer;
+  box-shadow: 0 0 10px 10px #33f5ff;
+}
+
+
+.text-output {
+  font-weight: bold;
+  color: rgb(196, 14, 14);
+  text-shadow: 0 0 10px black, 0 0 20px red;
+}
+
+#result .result-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
