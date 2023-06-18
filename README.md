@@ -19,6 +19,33 @@ Nehmen Sie eine Sprachaufnahme auf, indem Sie auf den entsprechenden Button klic
 Die Anwendung transkribiert automatisch das aufgenommene Audio und zeigt den transkribierten Text an.
 Geben Sie eine Frage in das Textfeld ein und klicken Sie auf "Frage stellen". Die Anwendung generiert eine Antwort basierend auf dem transkribierten Text und zeigt sie an.
 
+## Unit Tests
+
+Dieses Projekt enthält Unit-Tests, um die Funktionalität der Anwendung zu überprüfen. Die Unit-Tests werden mithilfe des Python-Test-Frameworks `unittest` ausgeführt.
+
+## Beschreibung der Tests
+
+Die `unittest_app.py` Datei enthält die Definition der Unit-Tests. Hier ist eine Beschreibung der enthaltenen Tests:
+
+- `test_index_route`: Überprüft den Aufruf der Indexroute `'/'` und den Statuscode der Antwort.
+- `test_transcribe_route`: Überprüft den Aufruf der Transcribe-Route `'/transcribe'` und den Statuscode sowie den Content-Type der Antwort.
+- `test_correct_route`: Überprüft den Aufruf der Correct-Route `'/correct'` mit JSON-Daten, den Statuscode, den Content-Type und die enthaltenen JSON-Daten der Antwort.
+
+Die Testfälle verwenden die Assertions von `unittest`, um die erwarteten Ergebnisse zu überprüfen.
+
+Stellen Sie sicher, dass Sie die erforderlichen Abhängigkeiten und die richtige Umgebung eingerichtet haben, um die Tests erfolgreich auszuführen.
+
+
+### Ausführen der Tests
+
+Um die Tests auszuführen, stellen Sie sicher, dass Sie die erforderlichen Abhängigkeiten installiert haben und folgen Sie den nachstehenden Schritten:
+
+1. Navigieren Sie zum Wurzelverzeichnis des Projekts.
+2. Öffnen Sie ein Terminal oder eine Befehlszeile.
+3. Geben Sie den folgenden Befehl ein, um die Tests auszuführen:
+
+python -m unittest utittest_app.py
+
 ## Anforderungen:
 
 Python 3.x
