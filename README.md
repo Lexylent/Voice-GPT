@@ -17,7 +17,8 @@
 4. Öffnen Sie einen Webbrowser und navigieren Sie zur URL `http://127.0.0.1:5000`.
 5. Nehmen Sie eine Sprachaufnahme auf, indem Sie auf den entsprechenden Button klicken.
 6. Die Anwendung transkribiert automatisch das aufgenommene Audio und zeigt den transkribierten Text an.
-7. Geben Sie eine Frage in das Textfeld ein und klicken Sie auf "Frage stellen". Die Anwendung generiert eine Antwort basierend auf dem transkribierten Text und zeigt sie an.
+7. Überprüfen Sie den transkribierten Text und korrigieren Sie ihn gegebenenfalls, falls erforderlich.
+8. Sende sie den Text ab in dem sie auf "Absenden" drücken.
 ### Hinweis: Der Text, der aus dem Audio in Text umgewandelt wird, steht bereits zum Absenden bereit in der unteren Zeile, in der Sie den Text eventuell noch vor dem Absenden korrigieren können, wenn nötig.
 
 
