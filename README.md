@@ -74,7 +74,7 @@ Hinweis: Die Verwendung der audio.py-Funktionen erfordert die Installation der e
 
 ## Bilder
 
-In diesem Projekt werden Bilder verwendet, um das visuelle Design zu unterstützen. Aufgrund der Dateigrößenbeschränkung des Repositories können die Bilder nicht direkt hier abgelegt werden. Sie müssen die Bilder manuell herunterladen und in den entsprechenden Ordnern platzieren, um das Projekt korrekt auszuführen.
+In diesem Projekt werden Bilder verwendet, um das visuelle Design zu unterstützen. Aufgrund der Dateigrößenbeschränkung des Repositories können die Bilder nicht direkt hier abgelegt werden. Sie müssen die Bilder manuell einfügen (sie können eigene bilder als Hintergrund verwenden) und in den entsprechenden Ordnern platzieren, um das Projekt korrekt auszuführen.
 
 ### Platzierung der Bilder
 
@@ -93,12 +93,12 @@ Bitte beachten Sie, dass die Ordnerstruktur und die Dateinamen beibehalten werde
 Dieses Projekt wurde im Rahmen eines Abschlussprojekts erstellt. Bitte beachten Sie, dass die OpenAI GPT-3-Technologie kostenpflichtig ist und die Nutzung der API-Schlüssel zu Kosten führen kann.
 
 ## Autor
-[Christian Schröder & Alexander Ibach]
+### Christian Schröder & Alexander Ibach
 
 Lizenz
 Dieses Projekt ist unter der MIT-Lizenz lizenziert.
 
-Wenn Sie Fragen oder Probleme mit dem Projekt haben, kontaktieren Sie mich bitte unter [ibachalex13@gmail.com].
+Wenn Sie Fragen oder Probleme mit dem Projekt haben, kontaktieren Sie mich bitte Nicht! ;))
 
 Vielen Dank für Ihr Interesse an Voice-GPT!
 Chris & Alex
