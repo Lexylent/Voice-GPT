@@ -55,6 +55,20 @@ python -m unittest utittest_app.py
 3. PyAudio
 4. SpeechRecognition
 5. OpenAI Python
+
+## Zusammenfassung der audio.py-Funktionalität:
+
+### Die audio.py-Datei in diesem Repository stellt Funktionen zur Aufnahme von Audio und zur Transkription von Sprache in Text bereit.
+
+Die record_audio()-Funktion ermöglicht die Aufnahme von Audio mithilfe des PyAudio-Moduls. Sie definiert die Audioeinstellungen wie Chunkgröße, Sampleformat, Anzahl der Kanäle und Abtastrate. Die Aufnahme dauert eine bestimmte Zeit und die aufgezeichneten Frames werden in einer Liste gespeichert. Anschließend wird das aufgenommene Audio in einer Wave-Datei gespeichert.
+
+Die transcribe_audio(output_filename, text_file)-Funktion verwendet das SpeechRecognition-Modul, um das aufgenommene Audio zu transkribieren. Sie öffnet die Wave-Datei zum Lesen, liest die Audiodaten und erkennt die Sprache des Audios. Falls eine Sprache erkannt wird, wird das Audio in Text transkribiert und der transkribierte Text wird ausgegeben. Der transkribierte Text wird auch in einer Textdatei gespeichert.
+
+Die audio.py-Datei bietet Fehlerbehandlung für verschiedene Szenarien, wie das Fehlen eines Mikrofons oder Fehler bei der Spracherkennung. Sie enthält auch Funktionen zur Bereinigung des Speichers, um Ressourcen freizugeben.
+
+Diese Funktionalität ermöglicht es Benutzern, Spracheingaben aufzuzeichnen und in Text umzuwandeln, was nützlich sein kann, um Audioinhalte zu transkribieren oder Sprachbefehle zu verarbeiten.
+
+Hinweis: Die Verwendung der audio.py-Funktionen erfordert die Installation der erforderlichen Python-Module wie PyAudio und SpeechRecognition.
    
 ### Stellen Sie sicher, dass Sie die erforderlichen API-Schlüssel für die OpenAI GPT-3-Technologie haben und fügen Sie sie in der Datei api_service.py ein, um die Frage-Antwort-Funktion nutzen zu können.
 
