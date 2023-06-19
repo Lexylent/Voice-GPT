@@ -99,7 +99,7 @@ Dieses Projekt wurde im Rahmen eines Abschlussprojekts erstellt. Bitte beachten 
 Lizenz
 Dieses Projekt ist unter der MIT-Lizenz lizenziert.
 
-Wenn Sie Fragen oder Probleme mit dem Projekt haben, kontaktieren Sie mich bitte ### Nicht! ;))
+Wenn Sie Fragen oder Probleme mit dem Projekt haben, kontaktieren Sie mich bitte Nicht! ;))
 
 Vielen Dank für Ihr Interesse an Voice-GPT!
 Chris & Alex
