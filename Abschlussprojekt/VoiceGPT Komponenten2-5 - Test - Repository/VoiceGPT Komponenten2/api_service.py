@@ -5,7 +5,7 @@ openai.api_key ='Hier_kommt_der-apikey_hinein' #CHATGPT KEY
 # Versuche, eine Anfrage an OpenAI zu stellen
 def generate_answer(question):
     try:
-        prompt = f"Korrektur: {question}\nAntwort:"
+        prompt = f"Frage: {question}\nAntwort:"
         max_tokens = 100
 
         response = openai.Completion.create(
@@ -13,8 +13,8 @@ def generate_answer(question):
             prompt=prompt,
             max_tokens=max_tokens,
             n=1,
-            stop=None,
-            temperature=0.7,
+            stop="Antwort:",
+            temperature=0.5,
             top_p=1.0,
             frequency_penalty=0.0,
             presence_penalty=0.0
