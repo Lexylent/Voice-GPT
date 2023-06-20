@@ -28,15 +28,20 @@ Dieses Projekt enthält Unit-Tests, um die Funktionalität der Anwendung zu übe
 
 ## Beschreibung der Tests
 
-### test_index_route: Dieser Test überprüft den Aufruf der Indexroute '/'. Es wird der Statuscode der Antwort überprüft, um sicherzustellen, dass die Seite erfolgreich geladen wurde.
+### test_index_route: 
+Dieser Test überprüft den Aufruf der Indexroute '/'. Es wird der Statuscode der Antwort überprüft, um sicherzustellen, dass die Seite erfolgreich geladen wurde.
 
-### test_transcribe_route: Dieser Test überprüft den Aufruf der Transcribe-Route '/transcribe'. Es wird der Statuscode der Antwort überprüft, um sicherzustellen, dass die Anfrage erfolgreich verarbeitet wurde. Außerdem wird der Content-Type der Antwort überprüft, um sicherzustellen, dass die richtigen Daten zurückgegeben wurden.
+### test_transcribe_route: 
+Dieser Test überprüft den Aufruf der Transcribe-Route '/transcribe'. Es wird der Statuscode der Antwort überprüft, um sicherzustellen, dass die Anfrage erfolgreich verarbeitet wurde. Außerdem wird der Content-Type der Antwort überprüft, um sicherzustellen, dass die richtigen Daten zurückgegeben wurden.
 
-### test_correct_route: Dieser Test überprüft den Aufruf der Correct-Route '/correct' mit JSON-Daten. Es wird der Statuscode der Antwort überprüft, um sicherzustellen, dass die Anfrage erfolgreich verarbeitet wurde. Außerdem wird der Content-Type der Antwort überprüft, um sicherzustellen, dass die richtigen Daten zurückgegeben wurden. Es wird auch überprüft, ob das JSON-Datenfeld 'response' in der Antwort vorhanden ist und ob der Datentyp von 'response' ein String ist.
+### test_correct_route: 
+Dieser Test überprüft den Aufruf der Correct-Route '/correct' mit JSON-Daten. Es wird der Statuscode der Antwort überprüft, um sicherzustellen, dass die Anfrage erfolgreich verarbeitet wurde. Außerdem wird der Content-Type der Antwort überprüft, um sicherzustellen, dass die richtigen Daten zurückgegeben wurden. Es wird auch überprüft, ob das JSON-Datenfeld 'response' in der Antwort vorhanden ist und ob der Datentyp von 'response' ein String ist.
 
-### test_insert_user: Dieser Test überprüft das Einfügen eines Benutzers in die Datenbank. Es wird ein Benutzer mit einem Namen und einer E-Mail-Adresse erstellt und in die Datenbank eingefügt. Anschließend wird überprüft, ob der Benutzer erfolgreich in der Datenbank gespeichert wurde.
+### test_insert_user: 
+Dieser Test überprüft das Einfügen eines Benutzers in die Datenbank. Es wird ein Benutzer mit einem Namen und einer E-Mail-Adresse erstellt und in die Datenbank eingefügt. Anschließend wird überprüft, ob der Benutzer erfolgreich in der Datenbank gespeichert wurde.
 
-### test_insert_recording: Dieser Test überprüft das Einfügen einer Aufnahme in die Datenbank. Es wird eine Aufnahmedatei mit einem Audiodateinamen und einem Textdateinamen erstellt und in die Datenbank eingefügt. Anschließend wird überprüft, ob die Aufnahme erfolgreich in der Datenbank gespeichert wurde.
+### test_insert_recording: 
+Dieser Test überprüft das Einfügen einer Aufnahme in die Datenbank. Es wird eine Aufnahmedatei mit einem Audiodateinamen und einem Textdateinamen erstellt und in die Datenbank eingefügt. Anschließend wird überprüft, ob die Aufnahme erfolgreich in der Datenbank gespeichert wurde.
 
 Die Testfälle verwenden die Assertions von `unittest`, um die erwarteten Ergebnisse zu überprüfen.
 
