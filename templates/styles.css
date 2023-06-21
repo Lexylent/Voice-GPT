@@ -44,17 +44,16 @@ h1 {
   text-transform: uppercase;
   font-family: 'YourChosenFont', sans-serif;
   position: relative;
-  color: #4f60ff;
+  color: #4f4f4f;
   animation: text-glow 2s ease-in-out infinite alternate;
-  text-shadow: 0 0 10px black, 0 0 20px blue, 0 0 30px blue, 0 0 40px blue, 0 0 50px blue, 0 0 60px blue, 0 0 70px blue; /* Geändert: Textschatten in blauweiß */
-}
+  text-shadow: 0 0 10px black, 0 0 20px #4f4f4f, 0 0 30px #4f4f4f, 0 0 40px #4f4f4f, 0 0 50px #4f4f4f, 0 0 60px #4f4f4f, 0 0 70px #4f4f4f; /* Ändern Sie den Textschatten in dunkelgrau */}
 
 @keyframes text-glow {
   from {
     text-shadow: 0 0 10px white;
   }
   to {
-    text-shadow: 0 0 10px white, 0 0 20px #33f5ff, 0 0 30px #33f5ff, 0 0 40px #33f5ff, 0 0 50px #33f5ff, 0 0 60px #33f5ff, 0 0 70px #33f5ff;
+    text-shadow: 0 0 10px white, 0 0 20px #4f4f4f, 0 0 30px #4f4f4f, 0 0 40px #4f4f4f, 0 0 50px #4f4f4f, 0 0 60px #33f5ff, 0 0 70px #33f5ff;
   }
 }
 
@@ -66,11 +65,11 @@ h1 {
   font-size: 28px;
   border-radius: 0;
   cursor: pointer;
-  box-shadow: 0 0 10px 10px #999999; 
+  box-shadow: 0 0 10px 10px #999999;
+  margin-top: 30px; 
 }
-
 #result {
-  margin-top: 40px;
+  margin-top: 50px;
   font-size: 24px;
   border: 1px solid #999999;
   color: white;
@@ -80,7 +79,7 @@ h1 {
   max-width: 1000px;
   margin: 20px auto;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(51, 51, 51, 0.8); 
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
@@ -92,12 +91,14 @@ h1 {
   margin: 20px auto;
   box-sizing: border-box;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(51, 51, 51, 0.8); 
   border: 1px solid #999999;
-  color:white ;
+  color: white;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
   font-weight: bold;
 }
+
+
 
 .text-to-correct {
   font-weight: bold;
@@ -105,6 +106,7 @@ h1 {
   font-size: 30px;
   display: block;
   margin-top: 20px;
+  text-shadow: 0 0 10px black, 0 0 20px black;
 }
 
 .outlined-text {
@@ -126,13 +128,43 @@ h1 {
 
 .text-output {
   font-weight: bold;
-  color: rgb(196, 14, 14);
-  text-shadow: 0 0 10px black, 0 0 20px red;
+  color:white ;
+  font-size: 30px;
+  display: block;
+  margin-top: 20px;
+  text-shadow: 0 0 10px black, 0 0 20px black;
 }
+
 
 #result .result-text {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
+  text-shadow: 0 0 10px black, 0 0 20px black;
+}
+
+
+
+
+#exitButton {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  text-align: center;
+  box-shadow: 0 0 10px 10px #999999;
+  transform: translate(-50%, -50%);
+  z-index: 9999; /* Damit der Button über anderen Elementen liegt */
+}
+
+#exitButton:hover {
+  background-color: #999999;
 }
