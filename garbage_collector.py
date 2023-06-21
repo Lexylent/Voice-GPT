@@ -3,6 +3,7 @@ import glob
 import time
 import threading
 
+# Diese Funktion dient dazu, nicht verwendeten Speicher freizugeben oder andere Aufräumarbeiten durchzuführen.
 def garbage_collector():
     while True:
         files = glob.glob('output/*')  # Liste aller Dateien im output-Ordner
