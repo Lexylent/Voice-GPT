@@ -28,6 +28,12 @@ Dieses Projekt enthält Unit-Tests, um die Funktionalität der Anwendung zu übe
 
 ## Beschreibung der Tests
 
+### test_cleanup_log_file: 
+Dieser Test überprüft die Funktion cleanup_log_file. Zunächst wird eine Test-Log-Datei mit einer Größe von 2 MB und 10 Einträgen erstellt. Anschließend wird die Aufräumfunktion aufgerufen, um die Log-Datei auf eine maximale Größe von 1 MB und maximal 5 Einträge zu begrenzen. Der Test überprüft dann, ob die Log-Datei tatsächlich aufgeräumt wurde, indem überprüft wird, ob die Datei noch vorhanden ist (os.path.isfile(log_file_path)).
+
+### test_cleanup_temporary_files: 
+Dieser Test überprüft die Funktion cleanup_temporary_files. Zuerst werden temporäre Testdateien im "output"-Ordner erstellt. Der Test überprüft dann, ob die Testdateien erfolgreich gelöscht wurden, indem überprüft wird, ob alle Dateien gelöscht wurden (len(remaining_files) sollte 0 sein). Vor dem Löschen werden die Dateien noch überprüft, ob sie existieren (os.path.exists(file)). Die temporären Testdateien werden dann gelöscht, um den Testzustand sauber zu halten.
+
 ### test_index_route: 
 Dieser Test überprüft den Aufruf der Indexroute '/'. Es wird der Statuscode der Antwort überprüft, um sicherzustellen, dass die Seite erfolgreich geladen wurde.
 
