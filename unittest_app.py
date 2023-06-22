@@ -1,14 +1,17 @@
 import unittest
 import sqlite3
-import os 
+import os
 from flask import Flask
 from main import app
 from database import create_tables, insert_user, insert_recording
 from server_control import cleanup_log_file
+import shutil
+
 
 
 class AppTestCase(unittest.TestCase):
-
+    
+    
     def test_cleanup_log_file(self):
         # Erzeuge eine Test-Log-Datei mit einer Größe von 2 MB und 10 Einträgen
         log_file_path = 'server.log'
@@ -46,16 +49,20 @@ class AppTestCase(unittest.TestCase):
     def setUp(self):
         self.app = app.test_client()
         create_tables()  # Tabellen in der Datenbank erstellen
-        
+
     @classmethod
     def tearDown(self):
+    # Lösche den "output"-Ordner und alle darin enthaltenen Dateien
+        if os.path.exists('output'):
+            shutil.rmtree('output')
+
     # Tabellen aus der Datenbank löschen
-        conn = sqlite3.connect('database.db')
-        c = conn.cursor()
-        c.execute("DROP TABLE IF EXISTS user")
-        c.execute("DROP TABLE IF EXISTS recordings")
-        conn.commit()
-        conn.close()
+    conn = sqlite3.connect('database.db')
+    c = conn.cursor()
+    c.execute("DROP TABLE IF EXISTS user")
+    c.execute("DROP TABLE IF EXISTS recordings")
+    conn.commit()
+    conn.close()
 
 
     def test_index_route(self):
@@ -113,5 +120,6 @@ class AppTestCase(unittest.TestCase):
         self.assertEqual(result[1], audio_filename)  # Überprüfen Sie den Audiodateinamen
         self.assertEqual(result[2], text_filename)  # Überprüfen Sie den Textdateinamen
 
+    
 if __name__ == '__main__':
     unittest.main()
