@@ -6,6 +6,7 @@ from main import app
 from database import create_tables, insert_user, insert_recording
 from server_control import cleanup_log_file
 import shutil
+from unittest.runner import TextTestRunner
 
 
 
@@ -13,6 +14,7 @@ class AppTestCase(unittest.TestCase):
     
     
     def test_cleanup_log_file(self):
+        print("Running test_cleanup_log_file")
         # Erzeuge eine Test-Log-Datei mit einer Größe von 2 MB und 10 Einträgen
         log_file_path = 'server.log'
         with open(log_file_path, 'w') as file:
@@ -26,6 +28,7 @@ class AppTestCase(unittest.TestCase):
         self.assertTrue(os.path.isfile(log_file_path))  # Überprüft, ob die Log-Datei noch vorhanden ist
 
     def test_cleanup_temporary_files(self):
+        print("Running test_cleanup_temporary_files")
         # Erzeuge temporäre Testdateien im "output"-Ordner
         os.makedirs('output', exist_ok=True)
         with open('output/test1.wav', 'w') as file:
@@ -47,11 +50,13 @@ class AppTestCase(unittest.TestCase):
             os.remove(file)
     
     def setUp(self):
+        print("Running setUp")
         self.app = app.test_client()
         create_tables()  # Tabellen in der Datenbank erstellen
 
     @classmethod
     def tearDown(self):
+        print("Running tearDown")
     # Lösche den "output"-Ordner und alle darin enthaltenen Dateien
         if os.path.exists('output'):
             shutil.rmtree('output')
@@ -66,17 +71,20 @@ class AppTestCase(unittest.TestCase):
 
 
     def test_index_route(self):
+        print("Running test_index_route")
         # Testet den Aufruf der Indexroute '/'
         response = self.app.get('/')
         self.assertEqual(response.status_code, 200)  # Überprüft den Statuscode der Antwort
 
     def test_transcribe_route(self):
+        print("Running test_transcribe_route")
         # Testet den Aufruf der Transcribe-Route '/transcribe'
         response = self.app.post('/transcribe')
         self.assertEqual(response.status_code, 200)  # Überprüft den Statuscode der Antwort
         self.assertEqual(response.headers['Content-Type'], 'application/json')  # Überprüft den Content-Type der Antwort
 
     def test_correct_route(self):
+        print("Running test_correct_route")
         # Testet den Aufruf der Correct-Route '/correct' mit JSON-Daten
         data = {'correction': 'This is a test.'}
         response = self.app.post('/correct', json=data)
@@ -87,6 +95,7 @@ class AppTestCase(unittest.TestCase):
         self.assertIsInstance(response_data['response'], str)  # Überprüft den Datentyp von 'response'
 
     def test_insert_user(self):
+        print("Running test_insert_user")
         # Testen Sie das Einfügen eines Benutzers in die Datenbank
         name = 'Alex Ibach'
         email = 'ibachalex13@gmail.com'
@@ -104,6 +113,7 @@ class AppTestCase(unittest.TestCase):
         self.assertEqual(result[2], email)  # Überprüfen Sie die E-Mail des Benutzers
 
     def test_insert_recording(self):
+        print("Running test_insert_recording")
         # Testen Sie das Einfügen einer Aufnahme in die Datenbank
         audio_filename = 'audio.wav'
         text_filename = 'transcript.txt'
@@ -123,3 +133,9 @@ class AppTestCase(unittest.TestCase):
     
 if __name__ == '__main__':
     unittest.main()
+    
+    # Erstelle einen TextTestRunner und konfiguriere die gewünschten Ausgabeoptionen
+    runner = TextTestRunner(verbosity=1)  # Ändere die Verbosity je nach gewünschter Detailstufe der Ausgabe
+
+    # Führe die Tests mit dem TextTestRunner aus
+    unittest.main(testRunner=runner)
