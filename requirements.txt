@@ -1,0 +1,7 @@
+openai==0.27.0
+wave==0.0.2
+pyaudio==0.2.11
+SpeechRecognition==3.8.1
+flask==2.0.0
+sqlite3==3.36.0
+webbrowser==0.5.2
