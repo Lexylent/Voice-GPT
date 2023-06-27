@@ -111,12 +111,16 @@ def serve_script():
 # Starten der neuen Instanz
 start_new_instance(port)
 
+# Starte den garbage_collector in einem separaten Thread
+garbage_thread = threading.Thread(target=start_garbage_collector)
+garbage_thread.start()
+
 
 
 
 # Öffne einen Tab im Browser und starte die App
 if __name__ == '__main__':
     create_tables()  # Tabellen in der Datenbank erstellen
-    start_garbage_collector()  # Startet den garbage_collector in einem separaten Thread.
+    #start_garbage_collector()  # Startet den garbage_collector in einem separaten Thread.
     webbrowser.open('http://127.0.0.1:5000')
     app.run(port=5000, debug=False)
