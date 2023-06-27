@@ -85,9 +85,18 @@ def transcribe():
 def generate_answer_route():
     data = request.get_json()
     correction = data['correction']
-    response = generate_answer(correction)
-    return jsonify({'response': response})
 
+    global conversation_state  # Zugriff auf die globale Konversationszustandsvariable
+    response = generate_answer(f"{correction}\nZustand: {conversation_state}")
+
+    # Extrahiere den Text der Antwort und den aktualisierten Konversationszustand
+    if response:
+        answer = response.strip()
+        conversation_state = f"Zustand: {conversation_state}"
+    else:
+        answer = 'Keine Antwort gefunden.'
+
+    return jsonify({'response': answer})
 # CSS-Datei
 @app.route('/templates/styles.css')
 def serve_css():
